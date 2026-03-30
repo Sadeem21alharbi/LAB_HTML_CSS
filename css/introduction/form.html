@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> <!-- هذا جدا مهم عشان اللغة العربية والايموجي-->
+    <meta name = "viewport" content ="width=device-width,intial-scale=1.0"> <!-- اهم سطر يخلي يشتغل على جميع الاجهزة-->
+    <title>تسجيل رحلة</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            direction: rtl; /* عشان الكتابة تصير من اليمين لليسار*/
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        fieldset {
+            border: 2px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #0ea5a4;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: #0ea5a4;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #7ed7c1;
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: white;
+        }
+
+        .back-btn:hover {
+            background: #545b62;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>نموذج تسجيل في رحلة</h2>
+
+    <form onsubmit="showMessage(event)">
+
+        <!-- القسم الأول -->
+        <fieldset>
+            <legend>المعلومات الشخصية</legend>
+
+            <label>الاسم الكامل:</label>
+            <input type="text" required>
+
+            <label>البريد الإلكتروني:</label>
+            <input type="email" required>
+
+            <label>رقم الجوال:</label>
+            <input type="tel" required>
+
+            <label>الجنس:</label>
+            <select>
+                <option>ذكر</option>
+                <option>أنثى</option>
+            </select>
+        </fieldset>
+
+        <!-- القسم الثاني -->
+        <fieldset>
+            <legend>معلومات الرحلة</legend>
+
+            <label>عدد الأشخاص:</label>
+            <input type="number" min="1" required>
+
+            <label>عدد الأمتعة:</label>
+            <input type="number" min="0">
+
+            <label>تاريخ الرحلة:</label>
+            <input type="date" required>
+        </fieldset>
+
+        <!-- القسم الثالث -->
+        <fieldset>
+            <legend>معلومات إضافية</legend>
+            <label><input type="checkbox"> حجز إقامة فندقية</label>
+            <label><input type="checkbox"> وجبة إفطار مجانية</label>
+            <label><input type="checkbox"> مواصلات من وإلى المطار</label>
+            <label><input type="checkbox"> تسهيل اجراءات السفر </label>
+            <label><input type="checkbox"> تأمين سفر</label>
+        </fieldset>
+
+        <div class="buttons">
+            <button type="button" class="back-btn" onclick="goBack()">رجوع</button>
+            <button type="submit" class="submit-btn">إرسال</button>
+        </div>
+
+        <div class="success-message" id="successMsg">
+            ✅ تم إرسال النموذج بنجاح!
+        </div>
+
+    </form>
+</div>
+
+<script>
+    function showMessage(event) {
+        event.preventDefault(); 
+        document.getElementById("successMsg").style.display = "block";
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>

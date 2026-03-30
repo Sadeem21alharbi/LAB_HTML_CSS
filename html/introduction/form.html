@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> <!-- هذا جدا مهم عشان اللغة العربية والايموجي-->
+    <meta name = "viewport" content ="width=device-width,intial-scale=1.0"> <!-- اهم سطر يخلي يشتغل على جميع الاجهزة-->
+    <title>تسجيل رحلة</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>نموذج تسجيل في رحلة</h2>
+
+    <form onsubmit="showMessage(event)">
+        <fieldset>  <!--  القسم الأول حق المعلومات الشخصية-->
+            <legend>المعلومات الشخصية</legend>
+
+            <label>الاسم الكامل:</label>
+            <input type="text" required> <!-- هذا الحقل مهم يعني مايكون فارغ-->
+
+            <label>البريد الإلكتروني:</label>
+            <input type="email" required> <!--  نفس الشي هذا الحقل مهم يعني مايكون فارغ-->
+
+            <label>رقم الجوال:</label>
+            <input type="tel" required> <!--  نفس الشي هذا الحقل مهم يعني مايكون فارغ-->
+
+            <label>الجنس:</label>
+            <select>
+                <option>ذكر</option>
+                <option>أنثى</option>
+            </select>
+        </fieldset>
+        <fieldset> <!--  القسم الثاني معلومات الرحلة-->
+            <legend>معلومات الرحلة</legend>
+
+            <label>عدد الأشخاص:</label>
+            <input type="number" min="1" required> <!-- على الأقل يكتب شخص واحد-->
+
+            <label>عدد الأمتعة:</label>
+            <input type="number" min="0"> <!-- على الأقل صفر أمتعة-->
+
+            <label>تاريخ الرحلة:</label> <!-- مهم مايكون فارغ-->
+            <input type="date" required>
+        </fieldset>
+
+        <fieldset><!-- القسم الثالث معلومات أضافية-->
+            <legend>معلومات إضافية</legend>
+            <label><input type="checkbox"> الحصول على مرافق شخصي </label>
+            <label><input type="checkbox"> حجز إقامة فندقية</label>
+            <label><input type="checkbox"> وجبة إفطار مجانية</label>
+            <label><input type="checkbox"> مواصلات من وإلى المطار</label>
+            <label><input type="checkbox"> تأمين سفر</label>
+        </fieldset>
+
+        <div class="buttons">
+            <button type="button" class="back-btn" onclick="goBack()">رجوع</button>
+            <button type="submit" class="submit-btn">إرسال</button>
+        </div>
+
+        <div class="success-message" id="successMsg">
+            ✅ تم إرسال النموذج بنجاح!
+        </div>
+
+    </form>
+</div>
+
+<script> // وهنا استخدمت جافا سكربت عشان البوتون حق الارسال
+    function showMessage(event) {
+        event.preventDefault(); 
+        document.getElementById("successMsg").style.display = "block";
+    }
+
+    function goBack() { // وهنا عشان بوتون الرجوع
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>

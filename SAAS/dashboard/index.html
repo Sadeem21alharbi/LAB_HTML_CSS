@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistics Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- لاحظي هذا يربط موقعي بمكتبة ايقونات جاهزة -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> 
+</head>
+<body>
+<div class="layout">
+
+  <!--  هناالقسم الجانبي -->
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="logo-icon">⚙️</span>
+      <span>Logistics</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><i class="fa fa-cube"></i> Control Tower</li>
+        <li><i class="fa fa-file"></i> Generate Quote</li>
+        <li><i class="fa fa-truck"></i> Track Shipments</li>
+        <li><i class="fa fa-robot"></i> AI Console</li>
+        <li><i class="fa fa-user"></i> Customer Portal</li>
+      </ul>
+
+      <p class="section-title">INSIGHT & CONTROL</p>
+
+      <ul>
+        <li><i class="fa fa-folder"></i> Documents</li>
+        <li><i class="fa fa-chart-line"></i> Analytics</li>
+        <li class="active"><i class="fa fa-link"></i> Integrations</li>
+        <li><i class="fa fa-brain"></i> AI Training</li>
+      </ul>
+    </nav>
+
+    <div class="user">
+      <img src="icon.jpeg">
+      <div class ="user-info">
+        <strong>Alex</strong>
+        <p>Acme Logistics</p>
+      </div>
+    </div>
+  </aside>
+
+ 
+  <main class="main">
+    <div class="topbar"><!-- الجزء العلوي-->
+      <div class="breadcrumb">Dashboard / Integrations</div>
+
+      <div class="top-actions">
+        <input type="text" placeholder="Search by cargo, shipping, user id etc">
+        <button class="ai-btn">Get AI Insight ✨</button>
+        <button class="add-btn">+ Add New</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="card">
+        <h2>45</h2>
+        <p>Active integrations</p>
+      </div>
+
+      <div class="card">
+        <h2>5</h2>
+        <p>In Progress</p>
+      </div>
+
+      <div class="card">
+        <h2>1</h2>
+        <p class="danger">Needs attention</p>
+      </div>
+
+      <div class="card">
+        <h2>54</h2>
+        <p>More to add</p>
+      </div>
+    </div>
+
+    <section class="box">
+      <div class="box-header">
+        <h3>Carrier APIs</h3>
+        <span>View All →</span>
+      </div>
+
+      <div class="api-grid">
+
+        <div class="api-card">
+          <h4>Maersk Line</h4>
+          <p>AI-powered document generation and management</p>
+          <span class="badge success">Connected</span>
+        </div>
+
+        <div class="api-card">
+          <h4>Maersk Line</h4>
+          <p>AI-powered document generation and management</p>
+          <span class="badge info">Syncing</span>
+        </div>
+
+        <div class="api-card">
+          <h4>Maersk Line</h4>
+          <p>AI-powered document generation and management</p>
+          <span class="badge error">Errors</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="box">
+      <h3>System Integrations</h3>
+
+      <table>
+        <tr>
+          <td>Salesforce CRM</td>
+          <td class="right"><span class="badge success">Connected</span></td>
+        </tr>
+        <tr>
+          <td>SAP TMS</td>
+          <td class="right"><span class="badge success">Connected</span></td>
+        </tr>
+        <tr>
+          <td>Oracle ERP</td>
+          <td class="right"><span class="badge info">Syncing</span></td>
+        </tr>
+        <tr>
+          <td>Microsoft Dynamics</td>
+          <td class="right"><span class="badge error">Errors</span></td>
+        </tr>
+        <tr>
+          <td>Slack</td>
+          <td class="right"><span class="badge success">Connected</span></td>
+        </tr>
+        <tr>
+          <td>Shopify</td>
+          <td class="right"><span class="badge success">Connected</span></td>
+        </tr>
+      </table>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
